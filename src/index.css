@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .nav-items {
+    @apply relative ml-10 hover:tracking-widest hover:text-[#fa5519];
+  }
+  .nav-items::after {
+    @apply content-[''] bg-[#fa5519] h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-500;
+  }
+  .nav-items:hover::after {
+    @apply w-[100%];
+  }
+
+  .btn{
+    @apply font-bold text-white hover:bg-black transition ease-in-out bg-[#FF6B35] rounded-full;
+  }
+
+  /* .three::before{
+    @apply 
+  } */
+
+  /* .active {
+    @apply relative ml-10 tracking-widest text-[#fa5519];
+  } */
+  /* .active {
+    @apply content-[''] bg-[#fa5519] h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute;
+  } */
+  /* .page-name-container::after{
+        @apply content-[''] bg-[url('https://pettie.wpengine.com/wp-content/themes/petty/modules/breadcrumb/assets/image/Breadcrumb-icon-3.svg')]
+        w-[126px] h-[6rem]
+    } */
+}

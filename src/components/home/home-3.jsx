@@ -1,0 +1,108 @@
+import EmailIcon from "../../assets/images/home/EmailIcon.png";
+const Home3 = () => {
+  return (
+    <>
+      <div className="pet-care-container flex justify-center my-96">
+        <div className="pet-care-l flex ">
+          <img
+            className="w-[42rem]"
+            src="https://pettie.wpengine.com/wp-content/uploads/2023/04/Pty-Grid-Sec-Img-a-1.png"
+            alt="lady-with-dog"
+          />
+        </div>
+        <div className="pet-care-r w-[38%] flex flex-col justify-evenly space-y-16">
+          <div className="pet-care-heading flex flex-col flex-1 font-bold text-7xl leading-relaxed">
+            <span>Our Passion Is</span>
+            <span>Providing Superior</span>
+            <span>Pet Care</span>
+          </div>
+          <div className="pet-care-description flex flex-1 text-2 xl items-center font-semibold     ">
+            <span>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
+              deleniti aspernatur ab ratione? Soluta ullam nulla modi iste sit
+              maiores.
+            </span>
+          </div>
+          <div className="pet-care-points flex justify-evenly">
+            <div className="pet-care-l w-full flex flex-col flex-1 justify-evenly space-y-12">
+              <div className="point1 flex items-center space-x-5 text-4xl font-bold">
+                <img
+                  className="w-12 rotate-45"
+                  src="https://cdn-icons-png.flaticon.com/512/12/12638.png?w=740&t=st=1686393507~exp=1686394107~hmac=74dd48012b909e68b92e290e177c29b401368f26bba38f189dbba77951a2fb61"
+                  alt="paw"
+                />
+                <span>24/7 support</span>
+              </div>
+              <div className="point2 flex items-center space-x-5 text-4xl font-bold">
+                <img
+                  className="w-12 rotate-45"
+                  src="https://cdn-icons-png.flaticon.com/512/12/12638.png?w=740&t=st=1686393507~exp=1686394107~hmac=74dd48012b909e68b92e290e177c29b401368f26bba38f189dbba77951a2fb61"
+                  alt="paw"
+                />
+                <span>Pet Taxi Facility</span>
+              </div>
+              <div className="point3 flex items-center space-x-5 text-4xl font-bold">
+                <img
+                  className="w-12 rotate-45"
+                  src="https://cdn-icons-png.flaticon.com/512/12/12638.png?w=740&t=st=1686393507~exp=1686394107~hmac=74dd48012b909e68b92e290e177c29b401368f26bba38f189dbba77951a2fb61"
+                  alt="paw"
+                />
+                <div className="flex flex-col items-center justify-center">
+                  <span>Money Back</span>
+                  <span>Guarantee</span>
+                </div>
+              </div>
+            </div>
+            <div className="pet-care-r flex flex-col flex-1 space-y-12">
+              <div className="point4 flex items-center space-x-5 text-4xl font-bold">
+                <img
+                  className="w-12 rotate-45"
+                  src="https://cdn-icons-png.flaticon.com/512/12/12638.png?w=740&t=st=1686393507~exp=1686394107~hmac=74dd48012b909e68b92e290e177c29b401368f26bba38f189dbba77951a2fb61"
+                  alt="paw"
+                />
+                <span>Personalized care</span>
+              </div>
+              <div className="point5 flex items-center space-x-5 text-4xl font-bold">
+                <img
+                  className="w-12 rotate-45"
+                  src="https://cdn-icons-png.flaticon.com/512/12/12638.png?w=740&t=st=1686393507~exp=1686394107~hmac=74dd48012b909e68b92e290e177c29b401368f26bba38f189dbba77951a2fb61"
+                  alt="paw"
+                />
+                <span>Quick Delivery</span>
+              </div>
+              <div className="point6 flex items-center space-x-5 text-4xl font-bold">
+                <img
+                  className="w-12 rotate-45"
+                  src="https://cdn-icons-png.flaticon.com/512/12/12638.png?w=740&t=st=1686393507~exp=1686394107~hmac=74dd48012b909e68b92e290e177c29b401368f26bba38f189dbba77951a2fb61"
+                  alt="paw"
+                />
+                <span>Lowest Price</span>
+              </div>
+            </div>
+          </div>
+          <div className="pet-care-bottom flex justify-around">
+            <div className="email">
+              <div className="email-icon">
+                <img src={EmailIcon} alt={""} />
+              </div>
+              <div className="email-main flex flex-col">
+                <span>Email Us Anytime</span>
+                <span>info@example.com</span>
+              </div>
+            </div>
+            <div className="phone">
+              <div className="phone-icon">
+                <img src="" alt="" />
+              </div>
+              <div className="phone-main flex flex-col">
+                <span>Call Us Anytime</span>
+                <span>+91 123 456 789</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+export default Home3;
