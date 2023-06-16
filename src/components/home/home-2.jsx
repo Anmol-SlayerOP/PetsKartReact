@@ -1,3 +1,4 @@
+import ButtonHome from "./buttonHome";
 const Home2 = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const Home2 = () => {
               alt="DOD-dog-pic"
             />
           </div>
-          <button className="btn text-xl px-8 py-4">SHOP NOW</button>
+          <ButtonHome text={"SHOP NOW"} />
         </div>
         <div className="DOD-bird flex flex-col justify-center items-center space-y-10 ">
           <span>Bird</span>
@@ -20,7 +21,7 @@ const Home2 = () => {
               alt="DOD-bird-pic"
             />
           </div>
-          <button className="btn text-xl px-8 py-4">SHOP NOW</button>
+          <ButtonHome text={"SHOP NOW"} />
         </div>
         <div className="DOD-cat flex flex-col justify-center items-center space-y-10">
           <span>Cat</span>
@@ -30,7 +31,7 @@ const Home2 = () => {
               alt="DOD-cat-pic"
             />
           </div>
-          <button className="btn text-xl px-8 py-4">SHOP NOW</button>
+          <ButtonHome text={"SHOP NOW"} />
         </div>
       </div>
     </>

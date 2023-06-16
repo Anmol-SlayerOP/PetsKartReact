@@ -1,3 +1,5 @@
+import ButtonHome from "./buttonHome";
+
 const Home1 = () => {
   return (
     <>
@@ -15,9 +17,7 @@ const Home1 = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ipsa
             tempora! Necessitatibus facere sint exercitationem!
           </span>
-          <button className="btn text-xl tracking-widest px-12 py-4 mt-10 ">
-            DISCOVER
-          </button>
+          <ButtonHome text="DISCOVER"/>
         </div>
         <div className="home-main-right flex flex-col items-end">
           <img

@@ -1,11 +1,13 @@
 import EmailIcon from "../../assets/images/home/EmailIcon.png";
+import PhoneIcon from "../../assets/images/home/PhoneIcon.png";
+import ButtonHome from "./buttonHome";
 const Home3 = () => {
   return (
     <>
       <div className="pet-care-container flex justify-center my-96">
         <div className="pet-care-l flex ">
           <img
-            className="w-[42rem]"
+            className="w-[42rem] object-contain"
             src="https://pettie.wpengine.com/wp-content/uploads/2023/04/Pty-Grid-Sec-Img-a-1.png"
             alt="lady-with-dog"
           />
@@ -80,26 +82,33 @@ const Home3 = () => {
               </div>
             </div>
           </div>
-          <div className="pet-care-bottom flex justify-around">
-            <div className="email">
-              <div className="email-icon">
+          <div className="pet-care-bottom flex justify-around text-2xl">
+            <div className="email flex justify-center items-center gap-5">
+              <div className="email-icon w-16 self-center rounded-full p-3 bg-black hover:bg-orange-500">
                 <img src={EmailIcon} alt={""} />
               </div>
               <div className="email-main flex flex-col">
                 <span>Email Us Anytime</span>
-                <span>info@example.com</span>
+                <span className="font-bold hover:text-orange-500">
+                  info@example.com
+                </span>
               </div>
             </div>
-            <div className="phone">
-              <div className="phone-icon">
-                <img src="" alt="" />
+            <div className="phone flex justify-center items-center gap-5">
+              <div className="phone-icon w-16 rounded-full p-2 bg-[#ff9933] hover:bg-black">
+                <img src={PhoneIcon} alt="" />
               </div>
               <div className="phone-main flex flex-col">
                 <span>Call Us Anytime</span>
-                <span>+91 123 456 789</span>
+                <span className="font-bold hover:text-orange-500">
+                  +91 123 456 789
+                </span>
               </div>
             </div>
           </div>
+            <div>
+              <ButtonHome text="SHOP NOW"/>
+            </div>
         </div>
       </div>
     </>
