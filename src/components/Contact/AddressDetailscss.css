@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+.adcontainer{
+    background-image: url('../../assets/images/contact/Contact-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+.adcontainer .ad{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.ad .left-side .details{
+    display: flex;
+    flex-direction: row;
+    /* padding-top: 100px; */
+}
+.ad .left-side .topic{
+  display: inline-block;
+  margin-left: 10px;
+  
+}
+.adaicon{
+    /* background-color: aqua; */
+    font-family: "Readex Pro", Sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 3.5 !important;
+    /* size: 18px; */
+    display: inline;
+}
+.ad .left-side .topic .topicheading{
+    font-family: "Readex Pro", Sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0px 0px 5px 0px;
+    margin: 2pc 0px 10px 0px;
+    text-transform:uppercase
+
+    /* background-color: aqua; */
+}
+.ad .left-side .topic .text-two{
+    font-family: "Readex Pro", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    display: inline-block;
+    /* margin: 0px 0px 0px 0px;
+      */
+      color: black;
+      text-decoration: none;
+      margin-bottom: 10px;
+}
+.ad .left-side .topic .text-one{
+    font-family: "Readex Pro", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 10px 0px;
+    /* background-color: aqua; */
+}
+.adcontainer .ad .title{
+    align-items: center;
+    font-family: 'Fredoka One', display;
+    font-size: 42px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.7;
+    margin-block-start: 1.33em;
+    /* margin-block-end: 1.33em; */
+    margin-inline-start: 0px;
+    margin-inline-end: 0px
+    /* background-color: aqua; */
+
+
+}
+.adcontainer .ad .adwords{
+    font-family: "Readex Pro", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    /* text-transform: uppercase; */
+    line-height: 1.7;
+    margin: 40px 0px 0px;
+    padding: 0px 0px 30px;
+    
+
+
+
+
+
+}
