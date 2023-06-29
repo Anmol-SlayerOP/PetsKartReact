@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import './Contactformcss.css';
-import axios from 'axios';
 import ptyOverlay from '../../assets/images/contact/Pty-Contact-img-Overlay.png';
 import ptyimage from '../../assets/images/contact/Pty-Contact-img.webp';
+import axios from '../../api/axios';
+import useAuth from '../../hooks/useAuth';
 
-const baseURL = 'http://localhost:8080';
 
 const Contactform = () => {
+  const { getAuth } = useAuth();
   const [result, setResult] = React.useState("");
     const [SpringContactformdata,setSpringContactformdata] = useState({
     name: '',
@@ -40,30 +41,19 @@ const Contactformsubmit = async(e) => {
    
     
     async function setindatabase(){
-    // axios.get(`https://jsonplaceholder.typicode.com/users`)
-    // .then(res => {
-    //   const persons = res.data;
-    // console.log(persons);
-    // })
-
-
-    // ,{
-    //   headers: {
-    //     'Content-Type': 'application/json', // Set the content type to application/json
-    //   },
-    // }
-    // ${baseURL}
+  
 
     await axios
-    .post(`${baseURL}/api/formdata/`, SpringContactformdata 
+    .post(`/formdata/`, SpringContactformdata
     ,{
       headers: {
-        'Content-Type': 'application/json', // Set the content type to application/json
+        'Authorization':`Bearer ${getAuth()?.token}`,
+        'Content-Type': 'multipart/form-data', 
       },
     }) // Assuming the server is running on the same host
     .then((response) => {
-      console.log(response.data);
-      setTimeout(()=>{setResult(response.data)},6000); // Handle the response as needed
+      console.log(response.data.message);
+      setTimeout(()=>{setResult(response.data.message)},6000); // Handle the response as needed
     })
     .catch((error) => {
       // console.error(error);

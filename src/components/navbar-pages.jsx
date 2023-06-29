@@ -1,6 +1,8 @@
 
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 const NavbarPages = ({title}) => {
+  const {getAuth} = useAuth();
   return (
     <>
       <div className="flex flex-col justify-between w-screen h-[90vh] bg-[#f8f000] bg-[url('https://pettie.wpengine.com/wp-content/uploads/2023/05/Breadcrumb-img.png')]">
@@ -39,14 +41,23 @@ const NavbarPages = ({title}) => {
                 </NavLink>
               </li>
             </ul>
-          </div>
+          </div>          
           <div className="navbar-login-signup flex justify-evenly space-x-3">
-            <button className="login text-white hover:bg-black transition ease-in-out bg-[#FF6B35] rounded-full px-5 py-2 ">
-              LOGIN
-            </button>
-            <button className="signup text-white hover:bg-black transition bg-[#FF6B35] rounded-full px-5 py-2">
-              SIGNUP
-            </button>
+          {getAuth()?.user
+                ? (<NavLink to="/logout" className="login text-white hover:bg-black transition ease-in-out bg-[#FF6B35] rounded-full px-5 py-2 ">
+              LOGOUT
+            </NavLink>)
+                : (<>
+                  <NavLink to="/login" className="login text-white hover:bg-black transition ease-in-out bg-[#FF6B35] rounded-full px-5 py-2 ">
+                      LOGIN
+                  </NavLink>
+                  <NavLink to="/register" className="signup text-white hover:bg-black transition bg-[#FF6B35] rounded-full px-5 py-2">
+                    SIGNUP
+                  </NavLink>
+                  </>
+                )
+          }
+           
           </div>
         </nav>
 
