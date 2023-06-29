@@ -1,0 +1,33 @@
+.maplko{
+    margin-top: 98px;
+    box-sizing: border-box;
+    margin: 10%;
+}
+.maplko #mainlkomap{
+       
+       
+        aspect-ratio: 16/9;
+        height: 100%;
+        width: 100%;
+  
+}
+@media screen and (max-width:1116px){
+  .maplko #mainlkomap{
+        
+        aspect-ratio: 3/2;
+     
+     
+}
+}
+@media screen and (max-width:860px){
+  .maplko #mainlkomap{
+        
+        aspect-ratio: 4/5;
+    
+     
+}
+}
+
+
+
+

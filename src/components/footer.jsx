@@ -26,10 +26,7 @@ const Footer = () => {
             <button>Contact</button>
           </div>
           <div className="details flex flex-col gap-5 mt-20 mx-10">
-            <div className="address flex flex-col">
-              <span>No: 568 A, East Madison Street,</span>
-              <span>Ready Hall, MD, Uk 587</span>
-            </div>
+            
             <div className="phone">
               <span>+91 1234567890</span>
             </div>

@@ -1,11 +1,11 @@
 import NavbarPages from "../components/navbar-pages";
-
+import Maincontactus from "../components/Contact/Maincontactus";
 const Contact = () => {
   return (
     <>
       <NavbarPages title="Contact" />
-      <div>Contact</div>
-    </>
+          <Maincontactus/>
+        </>
   );
 };
 export default Contact;

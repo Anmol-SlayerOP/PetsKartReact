@@ -15,7 +15,6 @@ const Home = () => {
       <Home2/>
       <Home3/>
       <HomeServices/>
-      <Footer/>
     </>
   );
 }
