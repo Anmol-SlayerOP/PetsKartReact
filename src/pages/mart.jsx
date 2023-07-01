@@ -14,22 +14,23 @@ const Mart = () => {
   const [productList,setProductList] = useState([])
 
   useEffect(()=>{
-      console.log(getAuth()?.token)
-
-    axios.get("/pets/",{headers: { 'Authorization' : `Bearer ${getAuth()?.token}`,
-    'Content-Type': 'application/json'} }).then((res)=>{
-      console.log(res.data.data);
-      setPetsList(res.data.data);
-    }).catch((err)=>{console.log(err)})
-      
-      axios.get("/products/",{headers: { 'Authorization' : `Bearer ${getAuth()?.token}`,
-      'Content-Type': 'application/json'} }).then((res)=>{
-      console.log(res.data.data);
-      setProductList(res.data.data);
-     })
+      load();
     },[]);
 
-
+    function load(){
+      console.log(getAuth()?.token)
+      axios.get("/pets/",{headers: { 'Authorization' : `Bearer ${getAuth()?.token}`,
+      'Content-Type': 'application/json'} }).then((res)=>{
+        console.log(res.data.data);
+        setPetsList(res.data.data);
+      }).catch((err)=>{console.log(err)})
+        
+        axios.get("/products/",{headers: { 'Authorization' : `Bearer ${getAuth()?.token}`,
+        'Content-Type': 'application/json'} }).then((res)=>{
+        console.log(res.data.data);
+        setProductList(res.data.data);
+       })
+    }
   return (
     <>
       <NavbarPages title="Mart" />
@@ -42,22 +43,21 @@ const Mart = () => {
         Products
       </button>
       </div>
-
-      {(showPets) ?
+      { (showPets) ?
       (
         <div className="flex my-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full justify-center items-center gap-9">
-          {petsList.map((pets)=>(<PetsCard data={pets}/>))}
+          {petsList.map((pets)=>(<PetsCard data={pets} load={load}/>))}
         </div>
         </div>
       ) : (
         <div className="flex my-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full justify-center items-center gap-9">
-          {productList.map((product)=>(<ProductsCard data={product}/>))}
+          {productList.map((product)=>(<ProductsCard data={product} load={load}/>))}
         </div>
         </div>
       ) }
-      
+
     </>
   );
 };
