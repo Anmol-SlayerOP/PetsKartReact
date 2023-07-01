@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = ({ title }) => {
+    const {getAuth} = useAuth();
   return (
     <>
       <div class="h-[88vh] bg-[#f8f000] bg-[url('https://pettie.wpengine.com/wp-content/uploads/2023/05/Breadcrumb-img.png')]">
@@ -74,18 +76,22 @@ const Navbar = ({ title }) => {
                       </ul>
 
                       <div class="border-t px-6 py-8 space-y-6 md:px-12 md:py-16 lg:border-t-0 lg:py-0 lg:pl-6 lg:pr-0 lg:flex">
-                        <a
-                          href="#"
-                          class="block rounded-full bg-gradient-to-r from-[#ba1010]/90 to-[#FF6B35] px-6 py-3 text-center text-white"
-                        >
-                          LOGIN
-                        </a>
-                        <a
-                          href="#"
-                          class="block rounded-full bg-gradient-to-r from-[#ba1010]/90 to-[#FF6B35] px-6 py-3 text-center text-white"
-                        >
-                          SIGNUP
-                        </a>
+                         {getAuth()?.user
+                ? (<NavLink to="/logout" className="logout block rounded-full bg-gradient-to-r from-[#ba1010]/90 to-[#FF6B35] px-6 py-3 text-center text-white">
+              LOGOUT
+            </NavLink>)
+                : (<>
+                  <NavLink to="/login" className="login block rounded-full bg-gradient-to-r from-[#ba1010]/90 to-[#FF6B35] px-6 py-3 text-center text-white">
+                      LOGIN
+                  </NavLink>
+                  <NavLink to="/register" className="signup block rounded-full bg-gradient-to-r from-[#ba1010]/90 to-[#FF6B35] px-6 py-3 text-center text-white ">
+                    SIGNUP
+                  </NavLink>
+                  </>
+                )
+                        
+                         }   
+                     
                       </div>
                     </div>
                   </div>

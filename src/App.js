@@ -23,8 +23,6 @@ function App() {
         <Route path="/logout" element={<Logout/>}/>
         <Route path="/" element={<Home />} />
 
-        {/* <Route element={<RequireAuth/>}>
-        </Route> */}
 
         <Route element={<RequireAuth/>}>
         <Route path="/about" element={<About />} />

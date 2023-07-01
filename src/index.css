@@ -22,8 +22,8 @@
     @apply w-[100%];
   }
 
-  .btn{
-    @apply font-bold text-white hover:bg-black transition-colors duration-500 ease-in-out bg-[#FF6B35] rounded-full;
-  }
+  /* .btn{
+    @apply font-bold text-white hover:bg-black transition-colors duration-500 ease-in-out bg-gradient-to-r from-[#ba1010]/90 to-[#FF6B35] rounded-full;
+  } */
 
 }

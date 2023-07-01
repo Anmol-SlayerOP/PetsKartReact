@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
@@ -19,11 +21,11 @@ const Footer = () => {
 
         <div className="pb-24 items-center lg:flex lg:justify-center lg:gap-36 ">
           <div className="links flex flex-col items-center gap-9">
-            <button>Home</button>
-            <button>Mart</button>
-            <button>About Us</button>
-            <button>Gallery</button>
-            <button>Contact</button>
+            <NavLink to="/" className="hover:text-gray-400">Home</NavLink>
+            <NavLink to="/mart" className="hover:text-gray-400">Mart</NavLink>
+            <NavLink to="/about" className="hover:text-gray-400">About Us</NavLink>
+            <NavLink to="/gallery" className="hover:text-gray-400">Gallery</NavLink>
+            <NavLink to="/contact" className="hover:text-gray-400">Contact</NavLink>
           </div>
           <div className="details flex flex-col gap-5 mt-20 mx-10">
             

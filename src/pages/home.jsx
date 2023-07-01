@@ -9,8 +9,8 @@ import Navbar from "../components/navbar";
 const Home = () => {
   return (
     <>
-      {/* <NavbarPages title="Home" /> */}
-      <Navbar title="Home"/>
+      <NavbarPages title="Home" />
+      {/* <Navbar title="Home"/> */}
       <Home1/>
       <Home2/>
       <Home3/>
