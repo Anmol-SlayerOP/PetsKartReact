@@ -37,7 +37,7 @@ const NavbarHome = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-login-signup flex justify-evenly space-x-3">
+        <div className="navbar-login-signup flex flex-col justify-evenly space-x-3">
           <button className="btn login ">
             LOGIN
           </button>
