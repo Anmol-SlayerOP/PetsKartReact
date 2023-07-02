@@ -10,25 +10,24 @@ import { toast } from "react-toastify";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/register';
 
 const Register = () => {
     const userRef = useRef();
     const errRef = useRef();
 
     const [userName, setUserName] = useState('');
-    const [validName, setValidName] = useState(false);
+    const [validName, setValidName] = useState(true);
     const [userFocus, setUserFocus] = useState(false);
 
     const [email,setEmail] = useState('');
     const [eamilFocus, setEamilFocus] = useState(false);
 
     const [password, setPassword] = useState('');
-    const [validPwd, setValidPwd] = useState(false);
+    const [validPwd, setValidPwd] = useState(true);
     const [pwdFocus, setPwdFocus] = useState(false);
 
     const [matchPwd, setMatchPwd] = useState('');
-    const [validMatch, setValidMatch] = useState(false);
+    const [validMatch, setValidMatch] = useState(true);
     const [matchFocus, setMatchFocus] = useState(false);
 
     const [errMsg, setErrMsg] = useState('');
@@ -78,7 +77,7 @@ const Register = () => {
             setEmail('');
             setPassword('');
             setMatchPwd('');
-            toast.success('Signup Successfull !', {
+            toast.success('Registered Successfully !', {
                 position: "top-right",
                 theme: "colored",
             });
@@ -108,19 +107,22 @@ const Register = () => {
 
     return (
         <>
-        <NavbarPages title="Sign In" />
+        <NavbarPages title="Register" />
             {success ? (
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="#">Login</a>
                     </p>
                 </section>
             ) : (
-                <section>
+                <section className='flex w-full justify-center'>
+                <div className='felx w-fit border border-black p-5 '>
+            
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Register</h1>
                     <form onSubmit={handleSubmit}>
+                    <div className='flex flex-col gap-5'>
                         <label htmlFor="username">
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
@@ -206,6 +208,7 @@ const Register = () => {
                         </p>
 
                         <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        </div>
                     </form>
                     <p>
                         Already registered?<br />
@@ -213,6 +216,7 @@ const Register = () => {
                             <Link to="/">Sign In</Link>
                         </span>
                     </p>
+                    </div>
                 </section>
             )}
         </>

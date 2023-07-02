@@ -5,7 +5,7 @@ const NavbarPages = ({ title }) => {
   const { getAuth } = useAuth();
   return (
     <>
-      <div class="w-screen h-[88vh] bg-[#f8f000] bg-[url('https://pettie.wpengine.com/wp-content/uploads/2023/05/Breadcrumb-img.png')]">
+      <div class="w-screen h-[88vh] mb-5  bg-[#f8f000] bg-[url('https://pettie.wpengine.com/wp-content/uploads/2023/05/Breadcrumb-img.png')]">
         <header className=" justify-center">
           <div class="relative z-20">
             <div class="px-6 lg:container md:px-12 lg:mx-auto lg:px-6 lg:py-4">

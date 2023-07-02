@@ -88,12 +88,14 @@ const Login = () => {
     }
 
     return (
-
-        <section>
-            <NavbarPages title="Login" />
+        <>
+        <NavbarPages title="Login" />
+        <section className='flex w-full justify-center'>
+            <div className='felx w-fit border border-black p-5 '>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
+            <h1>Login</h1>
+            <form onSubmit={handleSubmit} >
+                <div className='flex flex-col gap-5'>
                 <label htmlFor="username">Username:</label>
                 <input
                     type="text"
@@ -103,6 +105,7 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                     required
+                    className='border border-black'
                 />
 
                 <label htmlFor="password">Password:</label>
@@ -112,8 +115,10 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                     required
+                    className='border border-black'
                 />
                 <button>Sign In</button>
+                </div>
             </form>
             <p>
                 Need an Account?<br />
@@ -121,8 +126,9 @@ const Login = () => {
                     <Link to="/register">Sign Up</Link>
                 </span>
             </p>
+            </div>
         </section>
-
+        </>
     )
 }
 

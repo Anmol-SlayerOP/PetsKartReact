@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import NavbarHome from './components/navbar-home'
-import NavbarPages from './components/navbar-pages';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider';
