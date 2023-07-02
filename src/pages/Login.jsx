@@ -6,6 +6,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
 import useAuth from '../hooks/useAuth';
 import NavbarPages from '../components/navbar-pages';
+import { toast } from 'react-toastify';
 const LOGIN_URL = '/auth/login';
 
 const Login = () => {
@@ -48,18 +49,39 @@ const Login = () => {
             console.log(response);
             setEmail('');
             setPassword('');
+            toast.success('Logged in Successfully !', {
+                position: "top-right",
+                theme: "colored",
+            });
             navigate(from, { replace: true });
+
             
         } catch (err) {
             console.log(err)
             if (!err?.response) {
                 setErrMsg('No Server Response');
+                toast.error('No Server Response', {
+                    position: "top-right",
+                    theme: "colored",
+                });
             } else if (err.response?.status === 400) {
                 setErrMsg('Missing Username or Password');
+                toast.error('Missing Username or Password', {
+                    position: "top-right",
+                    theme: "colored",
+                });
             } else if (err.response?.status === 401) {
                 setErrMsg('Unauthorized');
+                toast.error('Unauthorized', {
+                    position: "top-right",
+                    theme: "colored",
+                });
             } else {
                 setErrMsg('Login Failed');
+                toast.error('Login Failed', {
+                    position: "top-right",
+                    theme: "colored",
+                });
             }
             errRef.current.focus();
         }

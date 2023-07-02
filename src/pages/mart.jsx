@@ -35,11 +35,11 @@ const Mart = () => {
     <>
       <NavbarPages title="Mart" />
       {/* <div>Mart</div> */}
-      <div className="flex w-full px-16 justify-between py-2" >
-      <button onClick={()=>{setShowPets(true);}} className={ " w-fit px-14 py-3 tracking-wider"+((showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")} >
+      <div className="flex w-full md:px-16 justify-between py-2 mt-5" >
+      <button onClick={()=>{setShowPets(true);}} className={ "w-fit px-10 md:px-14 py-3 tracking-wider"+((showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")} >
        Pets
       </button>
-      <button onClick={()=>setShowPets(false) } className={ "w-fit px-14 py-3 tracking-wider"+((!showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")}>
+      <button onClick={()=>setShowPets(false) } className={ "w-fit px-10 md:px-14 py-3 tracking-wider"+((!showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")}>
         Products
       </button>
       </div>

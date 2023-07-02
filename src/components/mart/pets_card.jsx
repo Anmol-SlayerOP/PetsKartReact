@@ -1,8 +1,7 @@
 import React from "react";
-import ButtonHome from "../home/buttonHome";
 import useAuth from "../../hooks/useAuth";
 import axios from "../../api/axios";
-import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const PetsCard = ({ data, load }) => {
   const { getAuth } = useAuth();
@@ -29,9 +28,17 @@ const PetsCard = ({ data, load }) => {
       })
       .then((res) => {
         console.log("Deleted");
+        toast.success('Deleted successfully !', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: "colored"
+        });
         load();
       })
       .catch((err) => {
+        toast.error('Deletion Failed !', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: "colored"
+        });
         console.log(err);
       });
   }
@@ -63,8 +70,7 @@ const PetsCard = ({ data, load }) => {
           ) : null}
           {/* <ButtonHome text={"ADOPT"}/> */}
         </div>
-      </div>
-      <div className="card-bottom flex flex-col items-center justify-center mt-5">
+        <div className="card-bottom flex flex-col items-center justify-center m-5">
         <div className="card-name text-2xl font-bold hover:text-[#FF6B35] transition-colors duration-300 ease-in-out">
           {data.name}
         </div>
@@ -72,6 +78,8 @@ const PetsCard = ({ data, load }) => {
           {"Price : ₹ " + data.price}
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };

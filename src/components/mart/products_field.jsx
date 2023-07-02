@@ -2,6 +2,7 @@ import React from "react";
 import ButtonHome from "../home/buttonHome";
 import useAuth from "../../hooks/useAuth";
 import axios from "../../api/axios";
+import { toast } from "react-toastify";
 
 
 const ProductsCard = ({ data, load}) => {
@@ -30,9 +31,17 @@ const ProductsCard = ({ data, load}) => {
       })
       .then((res) => {
         console.log("Deleted");
+        toast.success('Deleted successfully !', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: "colored"
+        });
         load();
       })
       .catch((err) => {
+        toast.error('Deletion Failed !', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: "colored"
+        });
         console.log(err);
       });
   }
@@ -43,11 +52,7 @@ const ProductsCard = ({ data, load}) => {
         <div className="card-img">
           <img
           className="w-full object-contain rounded-2xl"
-            // height={400}
-            
-            // width={400}
             src={dataURI}
-            
             alt="image of product"
           />
         </div>

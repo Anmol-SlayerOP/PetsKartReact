@@ -1,4 +1,5 @@
 import "./App.css";
+import 'react-toastify/dist/ReactToastify.css';
 import NavbarHome from "./components/navbar-home";
 import NavbarPages from "./components/navbar-pages";
 import { Routes, Route } from "react-router-dom";
@@ -13,10 +14,12 @@ import RequireAuth from "./components/authenticate/RequireAuth";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Logout from "./pages/logout";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
+    <ToastContainer/>
       <Routes>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
