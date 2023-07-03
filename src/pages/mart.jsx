@@ -3,15 +3,27 @@ import NavbarPages from "../components/navbar-pages";
 import PetsCard from "../components/mart/pets_card";
 import ProductsCard from "../components/mart/products_field";
 import axios from "../api/axios";
+import Modal from 'react-modal';
 
 import useAuth from "../hooks/useAuth";
-
+import PetUpload from "../components/mart/pets_upload";
+import ProductUpload from "../components/mart/product_upload";
 
 const Mart = () => {
   const { getAuth } = useAuth();
   const [showPets,setShowPets] = useState(true) 
   const [petsList,setPetsList] = useState([]) 
   const [productList,setProductList] = useState([])
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const user = getAuth().user;
+  let admin = false;
+  user.roles.forEach((element) => {
+    if (element === "ROLE_ADMIN") {
+      admin = true;
+    }
+  });
+
 
   useEffect(()=>{
       load();
@@ -31,6 +43,15 @@ const Mart = () => {
         setProductList(res.data.data);
        })
     }
+
+    function openModal() {
+      setIsOpen(true);
+    }
+
+    function closeModal() {
+      setIsOpen(false);
+    }
+
   return (
     <>
       <NavbarPages title="Mart" />
@@ -39,6 +60,36 @@ const Mart = () => {
       <button onClick={()=>{setShowPets(true);}} className={ "w-fit px-10 md:px-14 py-3 tracking-wider"+((showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")} >
        Pets
       </button>
+
+     {(admin) ? <><button onClick={openModal}className="w-fit px-10 md:px-14 py-3 tracking-wider btn ">
+      {
+        (showPets) ?
+        (<span>Add Pet</span>)
+        :
+        (<span>Add Product</span>)
+      }
+      </button>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Form to add"
+      >
+      
+        <button onClick={closeModal}>close</button>
+        <div>
+        {(showPets) ? 
+        (
+          <PetUpload closeModal={closeModal} load={load}/>
+        ):
+        (
+          <ProductUpload closeModal={closeModal} load={load}/>
+        )
+        }
+        </div>
+      </Modal>
+     </>: null
+}
       <button onClick={()=>setShowPets(false) } className={ "w-fit px-10 md:px-14 py-3 tracking-wider"+((!showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")}>
         Products
       </button>

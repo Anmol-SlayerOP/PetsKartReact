@@ -23,17 +23,15 @@ function App() {
         <Route path="/logout" element={<Logout/>}/>
         <Route path="/" element={<Home />} />
 
+        <Route path="/mart" element={<Mart />} />
 
         <Route element={<RequireAuth/>}>
+
         <Route path="/about" element={<About />} />
-        </Route>
-        <Route element={<RequireAuth/>}>
+        
         <Route path="/contact" element={<Contact />} />
-        </Route>
-        <Route element={<RequireAuth/>}>
-        <Route path="/mart" element={<Mart />} />
-        </Route>
-        <Route element={<RequireAuth/>}>
+        
+        
         <Route path="/gallery" element={<Gallery />} />
         </Route>
       </Routes>
