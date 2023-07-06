@@ -96,9 +96,9 @@ const Login = () => {
             <h1>Login</h1>
             <form onSubmit={handleSubmit} >
                 <div className='flex flex-col gap-5'>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username">Email:</label>
                 <input
-                    type="text"
+                    type="email"
                     id="username"
                     ref={userRef}
                     autoComplete="off"
