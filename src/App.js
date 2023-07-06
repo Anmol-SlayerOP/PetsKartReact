@@ -23,16 +23,14 @@ function App() {
         <Route path="/logout" element={<Logout/>}/>
         <Route path="/" element={<Home />} />
 
-        <Route path="/mart" element={<Mart />} />
-
+       
         <Route element={<RequireAuth/>}>
 
-        <Route path="/about" element={<About />} />
+        <Route path="/mart" element={<Mart/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/Gallery" element={<Gallery/>} />
+        <Route path="/contact" element={<Contact/>} />
         
-        <Route path="/contact" element={<Contact />} />
-        
-        
-        <Route path="/gallery" element={<Gallery />} />
         </Route>
       </Routes>
       <Footer/>

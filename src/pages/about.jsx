@@ -1,10 +1,11 @@
 import NavbarPages from "../components/navbar-pages";
+import AboutUs from "../components/AboutUs/AboutUs"; 
 
 const About = () => {
   return (
     <>
       <NavbarPages title="About" />
-      <div>About</div>
+      <div><AboutUs/></div>
     </>
   );
 };
