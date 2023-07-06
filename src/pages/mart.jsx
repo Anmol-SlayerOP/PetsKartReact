@@ -52,16 +52,29 @@ const Mart = () => {
       setIsOpen(false);
     }
 
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        padding:'0',
+        'border-radius': '10%'
+      },
+    };
+    
   return (
     <>
       <NavbarPages title="Mart" />
       {/* <div>Mart</div> */}
       <div className="flex w-full md:px-16 justify-between py-2 mt-5" >
-      <button onClick={()=>{setShowPets(true);}} className={ "w-fit px-10 md:px-14 py-3 tracking-wider"+((showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")} >
+      <button onClick={()=>{setShowPets(true);}} className={ "w-fit px-5 md:px-14 py-3 tracking-wider"+((showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")} >
        Pets
       </button>
 
-     {(admin) ? <><button onClick={openModal}className="w-fit px-10 md:px-14 py-3 tracking-wider btn ">
+     {(admin) ? <><button onClick={openModal}className="w-fit px-5 md:px-14 py-3 tracking-wider btn ">
       {
         (showPets) ?
         (<span>Add Pet</span>)
@@ -74,10 +87,10 @@ const Mart = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Form to add"
-      >
-      
-        <button onClick={closeModal}>close</button>
-        <div>
+        style={customStyles}
+      >     
+
+        <div className="flex p-7 bg-yellow-300 ">
         {(showPets) ? 
         (
           <PetUpload closeModal={closeModal} load={load}/>
@@ -90,7 +103,7 @@ const Mart = () => {
       </Modal>
      </>: null
 }
-      <button onClick={()=>setShowPets(false) } className={ "w-fit px-10 md:px-14 py-3 tracking-wider"+((!showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")}>
+      <button onClick={()=>setShowPets(false) } className={ "w-fit px-5 md:px-14 py-3 tracking-wider"+((!showPets) ? " btn " : "border border-[3px] border-black rounded-3xl")}>
         Products
       </button>
       </div>

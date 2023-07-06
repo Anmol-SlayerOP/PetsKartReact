@@ -45,15 +45,13 @@ const PetsCard = ({ data, load }) => {
 
 
   return (
-    <div className="card-container flex flex-col items-center justify-center">
-      <div className="card-main flex flex-col items-center justify-evenly transition-all hover:bg-[#FFC312] w-[23rem] h-[30rem] p-5 border-[1px] rounded-2xl shadow-2xl ">
-        <div className="card-img h-[12rem] w-[30rem]">
+    <div className="card-container flex flex-col items-center justify-center p-5">
+      <div className="card-main flex flex-col items-center justify-evenly transition-all hover:bg-[#FFC312] w-[22rem] h-[30rem] p-5 border-[1px] rounded-2xl shadow-2xl ">
+        <div className="card-img h-[12rem] w-[22rem]">
           <img
             className="w-full h-full object-contain rounded-2xl"
             src={dataURI}
             alt="image of pet"
-            height={200}
-            width={200}
           />
         </div>
         <div className="card-btn flex flex-col items-center space-y-5 py-5 ">

@@ -44,16 +44,16 @@ const PetUpload = ({ closeModal, load }) => {
     }
     }
     return (
-      <div className="flex flex-col">
-        <div>Add Pet</div>
+      <div className="flex flex-col p-5 ">
+        <div className="text-center text-orange-700 text-xl font-sans">Add Pet</div>
         <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col">
-          <label>Pet's Name</label>
-          <input type="text" name="name" required/>
-          <label>Pet's Price</label>
-          <input type="number" name="price" required/>
-          <label>Pet's Pic</label>
-          <input type="file" name="image" required/>
-          <button type="submit">Add Pet</button>
+          <label className="mt-5" >Pet's Name</label>
+          <input type="text" name="name"  className="p-1 focus:border-b-2 border-black rounded-md border" placeholder="Pets Name" required/>
+          <label className="mt-5" >Pet's Price</label>
+          <input type="number" name="price"  className="p-1 focus:border-b-2 border-black rounded-md border" placeholder="5000" required/>
+          <label className="mt-5" >Pet's Pic</label>
+          <input type="file" name="image"  className="p-1 focus:border-b-2 border-black rounded-md border" required/>
+          <button  className="btn w-fit p-3 self-center mt-5" type="submit">Add Pet</button>
         </form>
       </div>
     );

@@ -47,9 +47,9 @@ const ProductsCard = ({ data, load}) => {
   }
 
   return (
-    <div className="card-container flex flex-col items-center justify-center">
-      <div className="card-main flex flex-col items-center justify-evenly transition-all hover:bg-[#FFC312] w-[23rem] h-[30rem] p-5 border-[1px] rounded-2xl shadow-2xl ">
-        <div className="card-img h-[12rem] w-[30rem]">
+    <div className="card-container flex flex-col items-center justify-center ">
+      <div className="card-main flex flex-col items-center justify-evenly transition-all hover:bg-[#FFC312] w-[20rem] h-[32rem] border-[1px] rounded-2xl shadow-2xl ">
+        <div className="card-img h-[12rem] w-[20rem]">
           <img
           className="object-contain rounded-2xl h-full w-full"
             src={dataURI}
@@ -58,7 +58,7 @@ const ProductsCard = ({ data, load}) => {
         </div>
         <div className="card-name text-2xl font-semibold hover:text-[#FF6B35] transition-colors duration-300 ease-in-out">{data.productDesc}</div>
         <div className="card-btn flex flex-col items-center space-y-5 my-5">
-          <button className="btn w-fit px-14 py-3 tracking-wider ">BUY</button>
+          <button className="btn w-fit px-12 py-3 tracking-wider ">BUY</button>
           {admin ? (
             <button
               className="w-fit px-14 py-3 tracking-wider bg-red-600 rounded-3xl text-white"

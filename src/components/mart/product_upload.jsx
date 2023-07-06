@@ -44,18 +44,18 @@ const ProductUpload = ({closeModal,load}) => {
     }
     }
     return (
-      <div className="flex flex-col">
-        <div>Add Pet</div>
+      <div className="flex flex-col p-5 ">
+        <div className="text-center text-orange-700 text-xl font-sans ">Add Product</div>
         <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col">
-          <label>Product's Name</label>
-          <input type="text" name="productName" required/>
-          <label>Product's Price</label>
-          <input type="number" name="price" required/>
-          <label>Product's Pic</label>
-          <input type="file" name="image" required/>
-          <label>Product's Description</label>
-          <input type="text" name="productDesc" required/>
-          <button type="submit">Add Product</button>
+          <label className="mt-5">Product's Name</label>
+          <input type="text" name="productName" className="p-1 focus:border-b-2 border-black rounded-md border " placeholder="Dog food" required/>
+          <label className="mt-5">Product's Price</label>
+          <input type="number" name="price" className="p-1 focus:border-b-2 border-black rounded-md border" placeholder="3000" required/>
+          <label className="mt-5">Product's Pic</label>
+          <input type="file" name="image" className="p-1 focus:border-b-2 border-black rounded-md border"  required/>
+          <label className="mt-5">Product's Description</label>
+          <input type="text" name="productDesc" className="p-1 focus:border-b-2 border-black rounded-md border" placeholder="Healthy dog food"  required/>
+          <button type="submit" className="btn w-fit p-3 self-center mt-5">Add Product</button>
         </form>
       </div>
     );

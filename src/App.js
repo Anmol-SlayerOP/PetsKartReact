@@ -23,11 +23,11 @@ function App() {
         <Route path="/logout" element={<Logout/>}/>
         <Route path="/" element={<Home />} />
 
-        <Route path="/mart" element={<Mart />} />
 
         <Route element={<RequireAuth/>}>
 
         <Route path="/about" element={<About />} />
+        <Route path="/mart" element={<Mart />} />
         
         <Route path="/contact" element={<Contact />} />
         
