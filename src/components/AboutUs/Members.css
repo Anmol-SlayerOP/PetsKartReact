@@ -1,0 +1,135 @@
+.eff:hover {
+    /* cursor: pointer; */
+    animation-name: anime;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    /* animation-play-state:var(0%)*/
+    animation-play-state: running; 
+    animation-fill-mode: forwards; 
+
+
+}
+
+@keyframes anime {
+
+    0% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 1%, white 1%, white)
+    }
+    5%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 5%, white 5%, white  )}
+
+    10% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 10%, white 10%, white)
+    }
+    15%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 15%, white 15%, white  )}
+    20% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 20%, white 20%, white)
+    }
+    25%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 25%, white 25%, white  )}
+    30% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 30%, white 30%, white)
+    }
+    35%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 35%, white 35%, white  )}
+
+    40% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 40%, white 40%, white)
+    }
+    45%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 45%, white 45%, white  )}
+
+    50% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 30%, white 30%, white);
+        color: white;
+    }
+    55%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 55%, white 55%, white  )}
+    60% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 60%, white 60%, white)
+    }
+    65%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 65%, white 65%, white  )}
+    70% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 70%, white 70%, white)
+    }
+    75%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 75%, white 75%, white  )}
+    80% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 80%, white 80%, white)
+    }
+    85%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 85%, white 85%, white  )}
+
+    90% {
+        background: linear-gradient(to bottom, #FFBF00, #FFBF00 90%, white 90%, white)
+    }
+    95%{
+        background: linear-gradient(to bottom,#FFBF00, #FFBF00 95%, white 95%, white  )}
+    100% {
+        background:#FFBF00 ;
+        color: white;
+    }
+
+
+}
+@media screen and (min-width: 1100px) {
+    .heading {
+      font-size: 60px;
+    }
+  }
+@media screen and (min-width: 750px) {
+    .heading {
+      font-size: 60px;
+    }
+  }
+@media screen and (max-width: 750px) {
+    .heading {
+      font-size: 20px;
+    }
+}
+.back{
+    background-image: url(../../assets/images/Members/v1008-25-b.jpg);
+    background-size:contain;
+    /* background-color: grey; */
+    /* background-blend-mode:lighten; */
+}
+@media screen and (min-width: 1100px) {
+    .contri {
+      font-size: 80px;
+    }
+  }
+@media screen and (min-width: 750px) {
+    .contri {
+      font-size: 80px;
+    }
+  }
+@media screen and (max-width: 750px) {
+    .contri {
+      font-size: 30px;
+    }
+}
+.hover-underline-animation {
+    /* display: inline-block; */
+    position: relative;
+    color: #0b0b0b;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #090909;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
