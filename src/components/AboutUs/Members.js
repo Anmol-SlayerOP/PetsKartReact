@@ -3,6 +3,7 @@ import img1 from "../../assets/images/Members/photo_6273684233239246479_y.jpg";
 import img2 from "../../assets/images/Members/IMG20230115162916.jpg";
 import img3 from "../../assets/images/Members/photo_6118348524706969391_y.jpg";
 import img4 from "../../assets/images/Members/anmol.jpg";
+import img5 from "../../assets/images/Members/photo_6136568098099149933_y.jpg";
 import MembersCss from "./Members.css";
 import LinkedIn from "../../assets/images/Members/pngwing.com.png";
 import Twitter from "../../assets/images/Members/pngwing3.com.png";
@@ -75,7 +76,7 @@ const Members = () => {
   ];
   const cards2 = [
     {
-      imageSrc: img1,
+      imageSrc: img5,
       text: "PRASHIK PAGARE",
       contri: "Frontend Developer",
       LinkedInLink: "https://www.linkedin.com/in/kuldeepsinh-jhala-0b9028257/",
@@ -95,7 +96,7 @@ const Members = () => {
       <div className="flex flex-col items-center text-center w-full py-32 heading font-thin">
         <div>
           <p>Get in Touch</p>
-          <p className="w-fit heading font-gordi contri hover-underline-animation">
+          <p className="w-fit heading font-gordi contri hover-underline-animation font-bold">
             Contributors
           </p>
         </div>

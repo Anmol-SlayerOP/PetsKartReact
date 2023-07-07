@@ -6,7 +6,7 @@ export default function AboutUs() {
   return (
     <div>
       <div class="text-container" style={{MembersCss}}>
-    <h1>Pawsitive</h1>
+    <h1>Be Pawsitive</h1>
     </div> 
       <Members/>
       

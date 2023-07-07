@@ -26,7 +26,7 @@
          
           
   .btn-grad {
-    background-image: linear-gradient(to right, #ed7c7c 0%, #dd6b0d  51%, #ed7c7c  100%);
+    background-image: linear-gradient(to right, #ffd000 0%, #e62406  51%, #ffd000  100%);
     margin: 10px;
     /* padding: 15px 30px; */
     text-align: center;
@@ -64,7 +64,7 @@
          
          
 .test-shine button{
-    background-image: linear-gradient(to right, #ffb347 0%, #ffcc33  51%, #ffb347  100%);
+    background-image: linear-gradient(to right, #ffd000 0%, #e62406  51%, #ffd000  100%);
     /* margin: 10px; */
     margin-left: 2px;
     margin-top: 6px;
@@ -81,7 +81,7 @@
 
   .test-shine button:hover {
     background-position: right center; /* change the direction of the change here */
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
   }
  
