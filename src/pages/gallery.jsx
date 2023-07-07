@@ -3,30 +3,31 @@ import Cats from "../components/gallery/cats"
 import Dogs from "../components/gallery/dogs"
 import Birds from '../components/gallery/birds'
 import Aquaries from '../components/gallery/aquaries'
+import GalleryCss from '../components/gallery/gallery.css'
 import { useState } from "react"
 
 
 const Gallery = () => {
   const [gallerySection,setGallerySection] = useState(0);
   return (
-     <>
-      <NavbarPages title="Gallery" />
+     <> 
+      <NavbarPages title="Gallery" /> 
       <br></br>
-      <div className="flex justify-evenly">
-      <button class="bg-[#FAA0A0] hover:bg-[#E30B5C] text-white font-bold py-2 px-4 border-4 border-[#FF69B4] hover:border-[#C21E56] w-[200px] h-[70px] rounded-[50px] items-center"
-      onClick={()=>{setGallerySection(0)}}>
+      <div className="flex justify-around mt-24 mb-6">
+      <button class={" text-[#fcfbfb] font-bold py-2 px-4 xl:w-[250px] lg:w-[200px] md:w-[150px] sm:w-[100px] h-[70px] gal-btn btn-grad "+((gallerySection===0)?"text-[#0a4208] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]":null) }
+      onClick={()=>{setGallerySection(0)}} style={{GalleryCss}}>
        Cats
       </button>
-      <button class="bg-[#FAA0A0] hover:bg-[#E30B5C] text-white font-bold py-2 px-4 border-4 border-[#FF69B4] hover:border-[#C21E56] w-[200px] h-[70px] rounded-[50px]"
-      onClick={()=>{setGallerySection(1)}}>
+      <button class={" text-white font-bold py-2 px-4  xl:w-[250px] lg:w-[200px] md:w-[150px] sm:w-[100px] h-[70px] gal-btn btn-grad "+((gallerySection===1)?"text-[#0a4208] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]":null)}
+      onClick={()=>{setGallerySection(1)}} style={{GalleryCss}}>
       Dogs
      </button>
-     <button class="bg-[#FAA0A0] hover:bg-[#E30B5C] text-white font-bold py-2 px-4 border-4 border-[#FF69B4] hover:border-[#C21E56] w-[200px] h-[70px] rounded-[50px]"
-     onClick={()=>setGallerySection(2)}>
+     <button class={" text-white font-bold py-2 px-4  xl:w-[250px] lg:w-[200px] md:w-[150px] sm:w-[100px] h-[70px] gal-btn btn-grad "+((gallerySection===2)?"text-[#0a4208] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ":null)}
+     onClick={()=>setGallerySection(2)} style={{GalleryCss}}>
       Birds
     </button>
-    <button class="bg-[#FAA0A0] hover:bg-[#E30B5C] text-white font-bold py-2 px-4 border-4 border-[#FF69B4] hover:border-[#C21E56] w-[200px] h-[70px] rounded-[50px]"
-    onClick={()=>setGallerySection(3)}>
+    <button class={" text-white font-bold py-2 px-4  xl:w-[250px] lg:w-[200px] md:w-[150px] sm:w-[100px] h-[70px] gal-btn btn-grad "+((gallerySection===3)?"text-[#0a4208] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ":null)}
+    onClick={()=>setGallerySection(3)} style={{GalleryCss}}>
        Fisheries
      </button>
       </div>
