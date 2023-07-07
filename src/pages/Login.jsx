@@ -6,7 +6,7 @@ import axios from "../api/axios";
 import useAuth from "../hooks/useAuth";
 import NavbarPages from "../components/navbar-pages";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const LOGIN_URL = "/auth/login";
 
@@ -67,14 +67,14 @@ const Login = () => {
       if (!err?.response) {
         setErrMsg("No Server Response");
         toast.error("No Server Response", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
         });
       } else if (err.response?.status === 400) {
         setErrMsg("Missing Username or Password");
@@ -99,7 +99,7 @@ const Login = () => {
     }
   };
 
-  const showToast = () => {}
+  const showToast = () => {};
 
   return (
     <>
@@ -113,8 +113,8 @@ const Login = () => {
           >
             {errMsg}
           </p>
-          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
-            Login
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black pb-5">
+            LOGIN
           </h1>
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div className="flex flex-col gap-5">
@@ -135,10 +135,12 @@ const Login = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
 
-              <label 
-              htmlFor="password"
-              className="block mb-2 text-xl font-medium text-gray-900 dark:text-black"
-              >Password:</label>
+              <label
+                htmlFor="password"
+                className="block mb-2 text-xl font-medium text-gray-900 dark:text-black"
+              >
+                Password:
+              </label>
               <input
                 type="password"
                 id="password"
@@ -148,21 +150,23 @@ const Login = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-500 ease-in-out z-10"
               />
               <button
-              className="w-full text-black bg-white bg-primary-white hover:bg-primary-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5  text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              onClick={showToast}
-              >Sign In</button>
+                className="w-full text-black bg-white bg-primary-white hover:bg-primary-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5  text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                onClick={showToast}
+              >
+                Sign In
+              </button>
               <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-/>
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
             </div>
           </form>
           <p className="text-sm font-light text-gray-500 dark:text-slate-900 mt-3">
