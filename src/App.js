@@ -1,5 +1,5 @@
 import "./App.css";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -16,24 +16,22 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
-    <ToastContainer/>
+      <ToastContainer />
       <Routes>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/logout" element={<Logout/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/" element={<Home />} />
 
-       
-        <Route element={<RequireAuth/>}>
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
 
-        <Route path="/mart" element={<Mart/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/gallery" element={<Gallery/>} />
-        <Route path="/contact" element={<Contact/>} />
-        
+        <Route element={<RequireAuth />}>
+          <Route path="/mart" element={<Mart />} />
         </Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }

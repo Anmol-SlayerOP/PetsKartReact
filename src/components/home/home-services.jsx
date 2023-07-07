@@ -19,15 +19,15 @@ const HomeServices = () => {
                 </div>
               </div>
             </div>
-            <div className="broading w-[25rem] sm:w-[28rem] h-[30rem] lg:h-[35rem] shadow-2xl flex justify-center items-center rounded-[2rem]">
-              <div className="broading-main ">
+            <div className="boarding w-[25rem] sm:w-[28rem] h-[30rem] lg:h-[35rem] shadow-2xl flex justify-center items-center rounded-[2rem]">
+              <div className="boarding-main ">
                 <img
                   className="rounded-[2rem] w-full"
                   src="https://pettie.wpengine.com/wp-content/uploads/2023/04/Home1-Service-img-2.webp"
                   alt=""
                 />
                 <div className="subheading text-center text-4xl lg:text-5xl font-bold md:pt-7 pt-[4%]">
-                  <span>Broading</span>
+                  <span>Boarding</span>
                 </div>
               </div>
             </div>

@@ -18,12 +18,8 @@ const Home3 = () => {
             <span>Providing Superior</span>
             <span>Pet Care</span>
           </div>
-          <div className="pet-care-description flex flex-1 text-2 xl items-center font-semibold whitespace-normal px-9 ">
-            <span>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-              deleniti aspernatur ab ratione? Soluta ullam nulla modi iste sit
-              maiores.
-            </span>
+          <div className="pet-care-description flex flex-1 text-2xl text-center items-center font-semibold whitespace-normal px-9 ">
+            <span>Going Above and Beyond for Your Furry Family Members</span>
           </div>
           <div className="pet-care-points flex  self-center">
             <div className="pet-care-l w-full flex flex-col flex-1 justify-center  space-y-12 whitespace-normal px-5">
@@ -101,13 +97,12 @@ const Home3 = () => {
               <div className="phone-main flex flex-col">
                 <span>Call Us Anytime</span>
                 <span className="font-bold hover:text-orange-500">
-                  +91 123 456 789
+                  +91 9812546901
                 </span>
               </div>
             </div>
           </div>
-          <div>
-          </div>
+          <div></div>
         </div>
       </div>
     </>

@@ -91,7 +91,7 @@
 }
 .back{
     background-image: url(../../assets/images/Members/v1008-25-b.jpg);
-    background-size:contain;
+    background-size:cover;
     /* background-color: grey; */
     /* background-blend-mode:lighten; */
 }
