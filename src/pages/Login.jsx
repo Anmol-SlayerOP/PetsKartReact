@@ -22,15 +22,11 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errMsg, setErrMsg] = useState("");
 
   useEffect(() => {
     userRef.current.focus();
   }, []);
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [email, password]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,7 +61,6 @@ const Login = () => {
     } catch (err) {
       console.log(err);
       if (!err?.response) {
-        setErrMsg("No Server Response");
         toast.error("No Server Response", {
           position: "top-center",
           autoClose: 5000,
@@ -77,19 +72,16 @@ const Login = () => {
           theme: "dark",
         });
       } else if (err.response?.status === 400) {
-        setErrMsg("Missing Username or Password");
         toast.error("Missing Username or Password", {
           position: "top-right",
           theme: "colored",
         });
       } else if (err.response?.status === 401) {
-        setErrMsg("Unauthorized");
         toast.error("Unauthorized", {
           position: "top-right",
           theme: "colored",
         });
       } else {
-        setErrMsg("Login Failed");
         toast.error("Login Failed", {
           position: "top-right",
           theme: "colored",
@@ -106,17 +98,11 @@ const Login = () => {
       <NavbarPages title="Login" />
       <section className="">
         <div className="flex flex-col items-center justify-center px-6  py-10  h-1/2 mx-auto  bg-[#ffe712] rounded-3xl w-1/2 sm:w-2/3 lg:w-1/3">
-          <p
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
-            aria-live="assertive"
-          >
-            {errMsg}
-          </p>
+          
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black pb-5">
             LOGIN
           </h1>
-          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 ">
             <div className="flex flex-col gap-5">
               <label
                 className="block mb-2 text-xl font-medium text-gray-900 dark:text-black"
