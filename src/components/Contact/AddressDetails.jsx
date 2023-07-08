@@ -19,14 +19,14 @@ const AddressDetails = () => {
                   <i class="fas adaicon fa-phone-alt"></i>
                   {/* <i class="fa-regular fa-phone" style={{color: "#000000"}}></i> */}
                   <div class="topic"><div className='topicheading'>Phone</div>
-                  <a href="tel:9555864945"class="text-one">+9195 5586 4945</a><br/>
-                  <a href="tel:9608692240"class="text-two">+9196 0869 2240</a>
+                  <a href="tel:9555864945"class="text-one">+91 95 5586 4945</a><br/>
+                  <a href="tel:9608692240"class="text-two">+91 96 0869 2240</a>
                 </div></div>
                 <div class="email details">
                   <i class="fas adaicon fa-envelope"></i>
                   <div class="topic"><div className='topicheading'>Email</div>
                   <a href="mailto:iit2022007@iiitl.ac.in" class="text-one">iit2022007@iiitl.ac.in</a><br/>
-                  <a href="mailto:anmolnag576@gmail.com" class="text-two">anmolnag576@gmail.com</a>
+                  <a href="mailto:info@pettypetskart.com" class="text-two">info@petty.com</a>
                 </div></div>
               </div>
               </div>

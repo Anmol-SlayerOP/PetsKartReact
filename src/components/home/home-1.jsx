@@ -13,13 +13,20 @@ const Home1 = () => {
           />
         </div>
         <div className="home-main-center flex flex-col justify-start items-center gap-7 text-center">
-          <span className="three font-bold text-5xl md:text-7xl">Fresh Flavoured</span>
-          <span className="smile font-bold text-5xl md:text-7xl">Dog Food</span>
-          <span className="w-[full] leading-[3rem] text-2xl whitespace-normal">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ipsa
-            tempora! Necessitatibus facere sint exercitationem!
+          <span className="three font-bold text-5xl md:text-7xl font">
+            Fresh Flavoured <br /> Dog Food
           </span>
-          <ButtonHome text="DISCOVER" onClick={()=>{navigate("/mart")}}/>
+          {/* <span className="smile font-bold text-5xl md:text-7xl">Dog Food</span> */}
+          <span className="w-[full] leading-[3rem] text-2xl whitespace-normal font-semibold">
+            Bursting with Flavor: <br /> Premium Dog Food That Excites Their
+            Taste Buds
+          </span>
+          <ButtonHome
+            text="DISCOVER"
+            onClick={() => {
+              navigate("/mart");
+            }}
+          />
         </div>
         <div className="home-main-right w-full xl:flex flex-col items-end relative hidden gap-[-20rem]">
           <img

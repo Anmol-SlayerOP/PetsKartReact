@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <>
+    <div className="z-50">
       <div className="wave">
         <img
           className="w-screen "
@@ -19,26 +19,45 @@ const Footer = () => {
           />
         </div>
 
-        <div className="pb-24 items-center lg:flex lg:justify-center lg:gap-36 ">
+        <div className="pb-24 items-baseline lg:flex lg:justify-center lg:gap-36 ">
           <div className="links flex flex-col items-center gap-9">
-            <NavLink to="/" className="hover:text-gray-400">Home</NavLink>
-            <NavLink to="/mart" className="hover:text-gray-400">Mart</NavLink>
-            <NavLink to="/about" className="hover:text-gray-400">About Us</NavLink>
-            <NavLink to="/gallery" className="hover:text-gray-400">Gallery</NavLink>
-            <NavLink to="/contact" className="hover:text-gray-400">Contact</NavLink>
+            <NavLink to="/" className="hover:text-gray-400">
+              Home
+            </NavLink>
+            <NavLink to="/mart" className="hover:text-gray-400">
+              Mart
+            </NavLink>
+            <NavLink to="/about" className="hover:text-gray-400">
+              About Us
+            </NavLink>
+            <NavLink to="/gallery" className="hover:text-gray-400">
+              Gallery
+            </NavLink>
+            <NavLink to="/contact" className="hover:text-gray-400">
+              Contact
+            </NavLink>
           </div>
-          <div className="details flex flex-col gap-5 mt-20 mx-10">
-            
+          <div className="details flex flex-col gap-10 mt-20 mx-10 text-2xl">
             <div className="phone">
               <span>+91 1234567890</span>
             </div>
             <div className="email">
               <span>support@petskart.com</span>
             </div>
+
+            <div className="address">
+              Registered Office Address: <br /> 6th Floor, DLF Center, <br />
+              Sansad Marg, New Delhi - 110001
+            </div>
+            
+            <div className="copyright lg:flex lg:gap-2">
+              <div>Copyright ©️ 2023 Petty Petskart | </div>
+              <div>All Rights Reserved</div>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Footer;

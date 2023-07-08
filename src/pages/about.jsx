@@ -4,7 +4,7 @@ import AboutUs from "../components/AboutUs/AboutUs";
 const About = () => {
   return (
     <>
-      <NavbarPages title="About" />
+      <NavbarPages title="About Us" />
       <div><AboutUs/></div>
     </>
   );
