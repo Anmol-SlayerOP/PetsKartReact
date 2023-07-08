@@ -47,7 +47,7 @@ const ProductsCard = ({ data, load}) => {
   }
 
   return (
-    <div className="card-container flex flex-col items-center justify-center ">
+    <div className="card-container flex flex-col items-center justify-center text-center">
       <div className="card-main flex flex-col items-center justify-evenly transition-all hover:bg-[#FFC312] w-[20rem] h-[32rem] border-[1px] rounded-2xl shadow-2xl ">
         <div className="card-img h-[12rem] w-[20rem]">
           <img

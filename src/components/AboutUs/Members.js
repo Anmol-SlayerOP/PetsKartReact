@@ -29,15 +29,23 @@ const Card = ({ imageSrc, text, contri, LinkedInLink, TwitterLink }) => {
         <p className="text-black-700 text-[15px] mt-[0px] text-center font-sans font font-semibold">
           {contri}
         </p>
-        <div className="flex justify-center mt-4 gap-10 hover-underline-animation">
-          <a href={LinkedInLink} target="_blank">
+        <div className="flex justify-center mt-4 gap-10 ">
+          <a
+            href={LinkedInLink}
+            target="_blank"
+            className="hover-underline-animation"
+          >
             <img
               src={LinkedIn}
               alt="Logo"
               className="h-[40px] hover:cursor-pointer  "
             ></img>
           </a>
-          <a href={TwitterLink} target="_blank">
+          <a
+            href={TwitterLink}
+            target="_blank"
+            className="hover-underline-animation"
+          >
             <img
               src={Twitter}
               alt="Logo"

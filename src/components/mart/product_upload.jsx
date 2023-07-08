@@ -35,7 +35,7 @@ const ProductUpload = ({closeModal,load}) => {
           theme: "colored",
         });
       } else {
-        toast.error(err?.response?.data, {
+        toast.error(err?.response?.data?.message , {
           position: "top-right",
           theme: "colored",
         });

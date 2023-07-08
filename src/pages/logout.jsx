@@ -21,7 +21,7 @@ const Logout = () => {
   });
   
   return (<>
-    <NavbarPages title="Logout was successful"/>
+    <NavbarPages title="Logged out successfully"/>
   </>)
 
   
