@@ -35,7 +35,8 @@ const PetUpload = ({ closeModal, load }) => {
           theme: "colored",
         });
       } else  {
-        toast.error(err?.response?.data, {
+        console.log(err?.response?.data?.message)
+        toast.error(err?.response?.data?.message , {
           position: "top-right",
           theme: "colored",
         });
