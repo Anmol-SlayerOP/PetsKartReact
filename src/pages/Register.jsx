@@ -6,35 +6,56 @@ import NavbarPages from "../components/navbar-pages";
 import axios from "../api/axios";
 import { toast } from "react-toastify";
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+const USER_REGEX = /^[a-zA-Z0-9_ ]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const Register = () => {
   const userRef = useRef();
-  const errRef = useRef();
 
   const [userName, setUserName] = useState("");
-  const [validName, setValidName] = useState(true);
-  const [userFocus, setUserFocus] = useState(false);
+
 
   const [email, setEmail] = useState("");
-  const [eamilFocus, setEamilFocus] = useState(false);
 
   const [password, setPassword] = useState("");
-  const [validPwd, setValidPwd] = useState(true);
-  const [pwdFocus, setPwdFocus] = useState(false);
 
   const [matchPwd, setMatchPwd] = useState("");
-  const [validMatch, setValidMatch] = useState(true);
-  const [matchFocus, setMatchFocus] = useState(false);
 
-  const [success, setSuccess] = useState(false);
   //prashix
-
+  
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    // if button enabled with JS hack
-    //prashix
+      e.preventDefault();
+      // if button enabled with JS hack
+      //prashix
+    const userNameCheck = USER_REGEX.test(userName);
+    if (!userNameCheck) {
+        toast.error("User Name can contain digits and alphabets only", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        return;
+      }
+
+    if (userName.length < 3 || userName.length > 23) {
+        toast.error("3 char < password < 23 char", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        return;
+      }
+  
     if (password.length < 8 || password.length > 24) {
       toast.error("8 char < password < 24 char", {
         position: "top-center",
@@ -46,12 +67,13 @@ const Register = () => {
         progress: undefined,
         theme: "dark",
       });
+      return;
     }
 
     const hasRequiredCharacters = PWD_REGEX.test(password);
 
     if (!hasRequiredCharacters) {
-      toast.error("Password must contain special character", {
+      toast.error("Password must contain special character, digits and alphabet", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -94,7 +116,7 @@ const Register = () => {
       // TODO: remove console.logs before deployment
       console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response))
-      setSuccess(true);
+
       //clear state and controlled inputs
       setUserName("");
       setEmail("");
@@ -111,7 +133,7 @@ const Register = () => {
           theme: "colored",
         });
       } else if (err.response?.status === 409) {
-        toast.error("Username Taken !", {
+        toast.error("This email is already registered !", {
           position: "top-right",
           theme: "colored",
         });
@@ -127,14 +149,14 @@ const Register = () => {
   return (
     <>
       <NavbarPages title="Register" />
-      {success ? (
+      {/* {success ? (
         <section>
           <h1>Success!</h1>
           <p>
-            <a href="#">Login</a>
+            Login
           </p>
         </section>
-      ) : (
+      ) : ( */}
         <section className=" flex flex-col items-center justify-center py-10  h-1/2 mx-auto  bg-[#ffe712] rounded-3xl min-w-[375px] w-[60%] md:max-w-[450px] lg:w-[35%] my-36">
           <h1 className="w-full text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black text-center">
             REGISTER
@@ -155,10 +177,6 @@ const Register = () => {
                 onChange={(e) => setUserName(e.target.value)}
                 value={userName}
                 required
-                aria-invalid={validName ? "false" : "true"}
-                aria-describedby="uidnote"
-                onFocus={() => setUserFocus(true)}
-                onBlur={() => setUserFocus(false)}
                 className="  border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-500 ease-in-out z-10"
               />
 
@@ -174,8 +192,6 @@ const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 required
-                onFocus={() => setEamilFocus(true)}
-                onBlur={() => setEamilFocus(false)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-500 ease-in-out z-10"
               />
 
@@ -191,10 +207,6 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 required
-                aria-invalid={validPwd ? "false" : "true"}
-                aria-describedby="pwdnote"
-                onFocus={() => setPwdFocus(true)}
-                onBlur={() => setPwdFocus(false)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-500 ease-in-out z-10"
               />
 
@@ -210,10 +222,6 @@ const Register = () => {
                 onChange={(e) => setMatchPwd(e.target.value)}
                 value={matchPwd}
                 required
-                aria-invalid={validMatch ? "false" : "true"}
-                aria-describedby="confirmnote"
-                onFocus={() => setMatchFocus(true)}
-                onBlur={() => setMatchFocus(false)}
                 className=" border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-500 ease-in-out z-10"
               />
 
@@ -229,7 +237,7 @@ const Register = () => {
             </div>
           </form>
         </section>
-      )}
+      {/* )} */}
     </>
   );
 };

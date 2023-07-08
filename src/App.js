@@ -12,13 +12,14 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Logout from "./pages/logout";
 import { ToastContainer } from "react-toastify";
+import RequireLogout from "./components/authenticate/RequireLogout";
 
 function App() {
   return (
     <>
       <ToastContainer />
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route element={<RequireLogout/>}><Route path="/login" element={<Login />} /></Route>
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/" element={<Home />} />

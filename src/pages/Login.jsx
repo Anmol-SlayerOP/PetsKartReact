@@ -1,7 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-
 import { Link, useNavigate, useLocation } from "react-router-dom";
-
 import axios from "../api/axios";
 import useAuth from "../hooks/useAuth";
 import NavbarPages from "../components/navbar-pages";
@@ -22,10 +20,6 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
 
 
   const handleSubmit = async (e) => {
@@ -87,7 +81,6 @@ const Login = () => {
           theme: "colored",
         });
       }
-      errRef.current.focus();
     }
   };
 
