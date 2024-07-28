@@ -20,9 +20,11 @@ const Contactform = () => {
   };
 const Contactformsubmit = async(e) => {
   e.preventDefault();
+  const access_key = process.env.REACT_APP_email_access_token;
+  
   setResult("Sending....");
   const formData = new FormData(e.target);
-  formData.append("access_key", "e7c8d071-98d7-4382-9b9d-cecefbec546e");
+  formData.append("access_key", access_key);
   formData.append("subject", "New Form Submission from ContactUs page");
   formData.append("from_name","PetsKart");
   formData.append("botcheck","");
